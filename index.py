@@ -3,8 +3,8 @@ from tkinter import *
 from tkinter.messagebox import showinfo
 import random
 
-width = 800
-heigh = 600
+width = 1000
+heigh = 1000
 grid_size = 20
 
 
@@ -50,15 +50,15 @@ class Game:
 
     def __init__(self):
         self.window = Tk()
-        self.canvas = Canvas(self.window, bg='black', width=width, heigh=heigh)
+        self.canvas = Canvas(self.window, bg='green', width=width, heigh=heigh)
         self.canvas.pack()
 
-        s = square(20, 20, 'white')
-        s1 = square(20, 20 ,'white')
-        s2 = square(20, 20, 'white')
-        s3 = square(20, 20, 'white')
+        s = square(20, 20, 'black')
+        s1 = square(20, 20 ,'black')
+        s2 = square(20, 20, 'red')
+        s3 = square(20, 20, 'black')
 
-        f = square(random.randint(grid_size,( width/grid_size))*grid_size - grid_size, random.randint(grid_size, (heigh/grid_size))*grid_size - grid_size, 'purple')
+        f = square(random.randint(grid_size,( width/grid_size))*grid_size - grid_size, random.randint(grid_size, (heigh/grid_size))*grid_size - grid_size, 'black')
         
         self.snake = [s, s1, s2, s3]
         self.food = [f]
@@ -114,7 +114,7 @@ class Game:
                 if(counter < 1):
                     counter += 1
                 elif(self.snake[0].pos() == self.snake[i].pos()):
-                    showinfo(title="Game Over",message= "GAME OVER!!!")
+                    showinfo(title="Vacilou",message= "VACILOU!!!")
                     exit()
 
 
